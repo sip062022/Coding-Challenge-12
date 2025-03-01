@@ -29,3 +29,23 @@ function updateMetricCards() { // function to update the metric card
 }
 
 updateMetricCards(); // calls the function to update the metric card
+
+// Task 3: Dynamic Inventory Management – Adding and Removing Items //
+
+function addInventoryItem (productName) { // function to add item
+    const inventoryList = document.getElementById('inventoryList'); // grabs the inventory list container
+    const newItem = document.createElement('li'); // creates new item using <li>
+
+    newItem.setAttribute('class', 'product-item'); // sets class for the new item
+    newItem.setAttribute('data-product', productName); // sets attribute for new item
+
+    newItem.innerText = productName; // makes <li> content the product name
+
+    newItem.addEventListener('click', removeInventoryItem); // removes item when clicked
+    inventoryList.appendChild(newItem); // appends the new item 
+}
+
+function removeInventoryItem(event) { // function to remove inventory item
+    const removedItem = event.target; // remove the item that was clicked
+    removedItem.parentNode.removeChild(removedItem); // removes item
+}
