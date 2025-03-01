@@ -15,3 +15,17 @@ function addRevenueMetricCard () { // function to add the Revenue Metric Card
 }
 
 addRevenueMetricCard(); // adds the card to the dashboard by calling the function
+
+// Task 2: Updating Dashboard Metrics – Working with NodeLists and Arrays //
+
+function updateMetricCards() { // function to update the metric card
+    const metricCardNodeList = document.querySelectorAll('.metric-card'); // selects every element in metric-card
+    const metricCardsArray = Array.from(metricCardNodeList); // turns NodeList into an array
+
+    metricCardsArray.forEach(card => {
+        card.innerHTML += " - Updated"; // append "Updated" to the text
+        card.style.backgroundColor = "#90EE90"; // adds background color to the card
+    });
+}
+
+updateMetricCards(); // calls the function to update the metric card
