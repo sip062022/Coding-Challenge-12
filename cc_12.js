@@ -5,13 +5,26 @@ function addRevenueMetricCard () { // function to add the Revenue Metric Card
     const dashboardByQuery = document.querySelector('#dashboard'); // additional method to select dashboard container
 
     const revenueCard = document.createElement('div');  // adds <div> element for revenue card
+    const profitCard = document.createElement('div');  // adds <div> element for profit card
+    const expensesCard = document.createElement('div');  // adds <div> element for expenses card
+
 
     revenueCard.setAttribute('class', 'metric-card'); // sets the class for the revenue card
     revenueCard.setAttribute('id', 'revenueCard');  // sets the id for the revenue card
 
-    revenueCard.innerHTML = '<h3>Revenue</h3><p>$0</p>'; // sets the title "Revenue" and the placeholder $0
+    profitCard.setAttribute('class', 'metric-card'); // sets the class for the profit card
+    profitCard.setAttribute('id', 'profitCard');  // sets the id for the profit card
 
-    dashboardById.appendChild(revenueCard); // appends the metric card
+    expensesCard.setAttribute('class', 'metric-card'); // sets the class for the expenses card
+    expensesCard.setAttribute('id', 'expensesCard');  // sets the id for the expsenses card
+
+    revenueCard.innerHTML = '<h3>Revenue</h3><p>$0</p>'; // sets the title "Revenue" and the placeholder $0
+    profitCard.innerHTML = '<h3>Profit</h3><p>$0</p>'; // sets the title "Revenue" and the placeholder $0
+    expensesCard.innerHTML = '<h3>Expenses</h3><p>$0</p>'; // sets the title "Revenue" and the placeholder $0
+
+    dashboardById.appendChild(revenueCard); // appends the revenue metric card
+    dashboardById.appendChild(profitCard); // appends the profit metric card
+    dashboardById.appendChild(expensesCard); // appends the expenses metric card
 }
 
 addRevenueMetricCard(); // adds the card to the dashboard by calling the function
